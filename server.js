@@ -39,7 +39,18 @@ io.on('connection', (socket) => {
   });
 
   socket.on(ACTIONS.CODE_CHANGE, ({ roomId, code }) => {
-    socket.in(roomId).emit(ACTIONS.CODE_CHANGE, { code });
+    socket.in(roomId).emit(ACTIONS.CODE_CHANGE, { code }); // broadcast
+  });
+
+  // socket.on(ACTIONS.SYNC_CODE, ({ socketId, code }) => {
+  //   io.to(socketId).emit(ACTIONS.CODE_CHANGE, { code });
+  // });
+  socket.on(ACTIONS.SYNC_CODE, ({ socketId, code }) => {
+    if (typeof socketId === 'string' && typeof code === 'string') {
+      io.to(socketId).emit(ACTIONS.CODE_CHANGE, { code }); // updated code in new joined user
+    } else {
+      console.error('Invalid socketId or code type');
+    }
   });
 
   socket.on('disconnecting', () => {
