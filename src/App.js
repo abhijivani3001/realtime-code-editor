@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import EditorPage from './pages/EditorPage';
 import { Toaster } from 'react-hot-toast';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 const App = () => {
   return (
