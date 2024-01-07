@@ -15,12 +15,12 @@ const App = () => {
           content='This is Realtime code editor, for coders who want to tals with each other in IDE at the same time'
         />
         <meta property='og:url' content={window.location.href} />
-        <meta property='og:image' content='/favicon.ico' />
+        <meta property='og:image' content='/code-sync.png' />
         <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' />
+        <meta property='og:image:height' content='930' />
 
-        <title>Realtime Code Editor</title>
-        <link rel='icon' type='image/jpg' href='/favicon.ico' />
+        {/* <title>Realtime Code Editor</title> */}
+        {/* <link rel='icon' type='image/jpg' href='/favicon.ico' /> */}
       </Helmet>
 
       <div>
